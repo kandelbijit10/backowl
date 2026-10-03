@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blackowl & Co. — Design. Motion. Digital.</title>
+<meta name="description" content="Blackowl & Co. is a creative studio from Nepal building brands, digital experiences and visual stories through design, motion and technology.">
+<meta property="og:title" content="Blackowl & Co. — Design. Motion. Digital.">
+<meta property="og:description" content="Creative studio for branding, motion graphics, UI/UX and web.">
+<meta property="og:type" content="website">
+<style>
+:root{--p:#635BFF;--k:#0A0A0A;--w:#fff;--l:#F5F5F7;--f:Inter,Manrope,"Helvetica Neue",Arial,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+body{font-family:var(--f);background:var(--w);color:var(--k);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--p);outline-offset:3px}
+.wrap{padding:0 clamp(20px,4vw,56px)}
+.lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.h{font-weight:800;letter-spacing:-.05em;line-height:.9;font-size:clamp(44px,10.5vw,170px);text-transform:uppercase}
+section{padding:clamp(80px,12vw,180px) 0;position:relative}
+.dark{background:var(--k);color:var(--w)}.light{background:var(--l)}
+/* reveal */
+.ln{display:block;overflow:hidden}.ln>span{display:block;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.in .ln>span,.ln.in>span{transform:none}
+.fade{opacity:0;transform:translateY(24px);transition:.9s cubic-bezier(.2,.8,.2,1)}.fade.in{opacity:1;transform:none}
+/* loader */
+#ld{position:fixed;inset:0;background:var(--k);color:#fff;z-index:100;display:flex;flex-direction:column;justify-content:space-between;padding:28px;transition:transform 1s cubic-bezier(.8,0,.2,1)}
+#ld.out{transform:translateY(-100%)}#ld b{font-size:clamp(80px,22vw,300px);letter-spacing:-.06em;line-height:.8;align-self:flex-end}
+#bar{height:2px;background:var(--p);width:0}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:calc(20px + env(safe-area-inset-top,0px)) clamp(20px,4vw,56px) 20px;color:#fff;mix-blend-mode:difference;transition:transform .5s,padding .4s}
+nav.hide{transform:translateY(-100%)}nav.sm{padding-top:12px;padding-bottom:12px}
+nav .logo{font-weight:800;letter-spacing:-.02em}nav ul{display:flex;gap:28px;list-style:none;padding:0}
+nav ul a,.mb{font-size:13px;font-weight:500;position:relative}nav ul a::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:.4s}nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nr{display:flex;gap:20px;align-items:center}.talk{border:1px solid currentColor;border-radius:99px;padding:8px 16px;font-size:13px}
+#menu{position:fixed;inset:0;background:var(--k);color:#fff;z-index:49;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(20px,4vw,56px);clip-path:circle(0 at 100% 0);transition:clip-path .9s cubic-bezier(.7,0,.2,1);visibility:hidden}
+#menu.on{clip-path:circle(150% at 100% 0);visibility:visible}
+#menu a{font-size:clamp(44px,12vw,110px);font-weight:800;letter-spacing:-.05em;line-height:1.05;display:block;transition:color .3s}#menu a:hover{color:var(--p)}
+@media(max-width:860px){nav ul,.talk{display:none}}
+/* hero */
+#hero{min-height:100vh;min-height:100svh;padding:140px 0 60px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--k);color:#fff;overflow:hidden}
+#owl{position:absolute;right:-6vw;top:50%;width:min(62vw,820px);transform:translateY(-52%);opacity:.95}
+#hero .h{position:relative;z-index:2;mix-blend-mode:difference}
+.hb{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;margin-top:40px;position:relative;z-index:2}
+.hb p{max-width:440px;line-height:1.55;color:#c8c8cf}
+.btn{display:inline-block;padding:18px 28px;border:1px solid currentColor;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background .4s,color .4s,border-color .4s}
+.btn:hover,.btn.f{background:var(--p);border-color:var(--p);color:#fff}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+/* intro */
+#intro .h{font-size:clamp(40px,9vw,150px)}#intro .ln{overflow:visible}#intro .a{color:#bbb;transition:color .8s .5s}#intro .in .a{color:var(--p)}
+#intro p{max-width:520px;margin-top:48px;font-size:clamp(17px,1.6vw,22px);line-height:1.5}
+/* services */
+.sv{border-top:1px solid #ddd}.sv:last-child{border-bottom:1px solid #ddd}
+.sv>button{width:100%;display:flex;gap:4vw;align-items:baseline;text-align:left;padding:28px 0;transition:color .3s,padding .4s}
+.sv>button:hover{color:var(--p);padding-left:16px}
+.sv i{font-style:normal;font-size:14px;font-weight:600;min-width:34px}.sv span{font-size:clamp(30px,6.4vw,100px);font-weight:800;letter-spacing:-.05em;line-height:1;text-transform:uppercase}
+.sv .x{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.2,.8,.2,1)}.sv.o .x{grid-template-rows:1fr}
+.x>div{overflow:hidden}.x ul{list-style:none;padding:0 0 32px calc(34px + 4vw);display:flex;flex-wrap:wrap;gap:10px}
+.x li{border:1px solid #ccc;border-radius:99px;padding:8px 16px;font-size:14px}.sv.o>button{color:var(--p)}
+/* work */
+.wk{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(40px,6vw,90px) 24px}
+.pj{display:block;grid-column:span 7;cursor:pointer}.pj:nth-child(2){grid-column:8/13;margin-top:18vw}.pj:nth-child(3){grid-column:3/10}.pj:nth-child(4){grid-column:9/13;margin-top:8vw}
+.pv{overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--k)}.pj:nth-child(2) .pv,.pj:nth-child(4) .pv{aspect-ratio:3/4}
+.pv>div{position:absolute;inset:-8%;display:grid;place-items:center;font-size:clamp(60px,14vw,220px);font-weight:800;letter-spacing:-.06em;color:rgba(255,255,255,.92);transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .6s;will-change:transform}
+.pj:hover .pv>div{transform:scale(1.06)}
+.pv::after{content:"";position:absolute;inset:0;background:var(--k);transform-origin:top;transition:transform 1.1s cubic-bezier(.8,0,.2,1)}.pj.in .pv::after{transform:scaleY(0)}
+.pm{display:flex;justify-content:space-between;gap:16px;margin-top:16px;align-items:baseline;flex-wrap:wrap}.pm h3{font-size:clamp(22px,2.6vw,36px);letter-spacing:-.04em;text-transform:uppercase}.pm small{display:block;color:#777;margin-top:4px;font-size:14px}
+.c0{background:linear-gradient(135deg,#0A0A0A,#635BFF)}.c1{background:#F5F5F7}.c1 div{color:#0A0A0A!important}.c2{background:#0A0A0A;background-image:repeating-linear-gradient(90deg,#1b1b1f 0 1px,transparent 1px 40px)}.c3{background:#635BFF}
+@media(max-width:860px){.wk{display:block}.pj{margin:0 0 56px!important}}
+/* why */
+.wy{display:grid;grid-template-columns:1fr 1fr;gap:6vw;margin-bottom:80px}.wy p{font-size:clamp(17px,1.8vw,24px);line-height:1.5;color:#c8c8cf}
+.wr{border-top:1px solid #333;padding:24px 0;display:flex;gap:4vw;align-items:baseline;transition:color .4s,padding .4s}.wr:hover{color:var(--p);padding-left:14px}.wr span{font-size:clamp(28px,5.4vw,84px);font-weight:800;letter-spacing:-.05em;text-transform:uppercase;line-height:1}
+@media(max-width:860px){.wy{grid-template-columns:1fr}}
+/* about */
+.ab{display:grid;grid-template-columns:1.2fr 1fr;gap:6vw;align-items:center}.ab p{font-size:clamp(17px,1.6vw,22px);line-height:1.55;margin-bottom:20px;max-width:560px}
+.tg{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.tg span{background:var(--k);color:#fff;padding:8px 16px;border-radius:99px;font-size:13px}
+.av{aspect-ratio:1;position:relative}.av i{position:absolute;border-radius:50%;border:1px solid var(--k);inset:0;animation:sp 18s linear infinite}
+.av i:nth-child(2){inset:14%;border-color:var(--p);animation-duration:12s;animation-direction:reverse}.av i:nth-child(3){inset:30%;background:var(--k);border:0;animation:none}.av i:nth-child(4){inset:42%;background:var(--p);border:0;animation:none}
+@keyframes sp{to{transform:rotate(360deg)}}@media(max-width:860px){.ab{grid-template-columns:1fr}.av{max-width:320px}}
+/* packages */
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:70px}
+.pc{border:1px solid #ddd;background:#fff;padding:36px 28px;display:flex;flex-direction:column;gap:20px;transition:transform .5s,border-color .4s}.pc:hover{transform:translateY(-8px);border-color:var(--p)}
+.pc.hi{background:var(--k);color:#fff;border-color:var(--k)}.pc h3{font-size:44px;letter-spacing:-.05em}.pc ul{list-style:none;padding:0}.pc li{padding:13px 0;border-top:1px solid rgba(128,128,140,.3);font-size:15px}.pc li b{color:var(--p);font-size:22px;margin-right:6px;letter-spacing:-.03em}
+.pc.hi .tag{color:var(--p)}.pc p{margin-top:auto;font-size:14px;opacity:.7}
+.cu{text-align:center;margin-top:90px}.cu h3{font-size:clamp(28px,4vw,56px);letter-spacing:-.04em;margin-bottom:6px}.cu p{margin-bottom:28px;color:#555}
+@media(max-width:860px){.pk{grid-template-columns:1fr}}
+/* trust */
+.lg{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:40px}
+.lg div{height:90px;border:1px dashed #bbb;display:grid;place-items:center;font-size:12px;color:#888;letter-spacing:.1em}
+@media(max-width:860px){.lg{grid-template-columns:repeat(2,1fr)}}
+/* process */
+#proc{height:420vh;padding:0}.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5vh}
+.trk{display:flex;gap:4vw;padding:0 clamp(20px,4vw,56px);will-change:transform}
+.st{flex:0 0 min(78vw,520px);border-top:2px solid #333;padding-top:20px;opacity:.35;transition:.5s}.st.on{opacity:1;border-color:var(--p)}
+.st b{display:block;font-size:clamp(60px,10vw,150px);letter-spacing:-.06em;line-height:.9}.st h3{font-size:clamp(26px,3.4vw,46px);letter-spacing:-.04em;margin:18px 0 8px}.st p{color:#c8c8cf;max-width:360px;line-height:1.5}
+.pb{height:2px;background:#333;margin:0 clamp(20px,4vw,56px)}.pb i{display:block;height:100%;background:var(--p);width:0}
+/* contact */
+#contact{background:var(--k);color:#fff}
+form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px;margin-top:70px}
+.fl{display:flex;flex-direction:column;gap:6px}.fl.w{grid-column:1/-1}.fl label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#999}
+input,select,textarea{font:inherit;font-size:18px;background:transparent;color:#fff;border:0;border-bottom:1px solid #444;padding:10px 0;border-radius:0;transition:border-color .3s;width:100%}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--p)}select option{color:#000}.err{border-color:#ff5c5c!important}
+#ok{grid-column:1/-1;color:var(--p);font-weight:600;min-height:1.4em}
+.ci{display:flex;flex-wrap:wrap;gap:20px 48px;margin-top:80px;font-size:18px}.ci a:hover{color:var(--p)}
+@media(max-width:700px){form{grid-template-columns:1fr}}
+/* footer */
+footer{background:var(--k);color:#fff;padding:60px 0 40px;border-top:1px solid #222}.fr{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .big{font-size:clamp(40px,11vw,190px);font-weight:800;letter-spacing:-.06em;line-height:.85;margin-bottom:40px}footer nav{position:static}
+.fk{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:#aaa}.fk a:hover{color:var(--p)}
+/* case study */
+#cs{position:fixed;inset:0;background:#fff;z-index:70;overflow-y:auto;transform:translateY(100%);transition:transform .9s cubic-bezier(.8,0,.2,1);visibility:hidden}
+#cs.on{transform:none;visibility:visible}#cs .top{position:sticky;top:0;display:flex;justify-content:space-between;padding:18px clamp(20px,4vw,56px);background:#fff;z-index:2;border-bottom:1px solid #eee}
+.cv{aspect-ratio:16/8;display:grid;place-items:center;font-size:clamp(70px,18vw,300px);font-weight:800;letter-spacing:-.06em;color:#fff;margin:40px 0;min-height:240px}
+.mt{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:40px 0}.mt small{display:block;color:#777;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.cb{display:grid;grid-template-columns:1fr 2fr;gap:4vw;padding:36px 0;border-top:1px solid #ddd}.cb p{line-height:1.6;font-size:18px;max-width:640px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}.gal div{aspect-ratio:4/3;display:grid;place-items:center;color:#888;font-size:13px;background:var(--l)}.gal div:first-child{grid-column:1/-1;aspect-ratio:16/7}
+.rel{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:80px}
+@media(max-width:700px){.cb,.mt{grid-template-columns:1fr}}
+/* cursor */
+#cur{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--p);pointer-events:none;z-index:200;display:grid;place-items:center;font-size:11px;font-weight:700;letter-spacing:.08em;color:#fff;transition:width .35s,height .35s,margin .35s;mix-blend-mode:normal}
+#cur.b{width:96px;height:96px;margin:-48px 0 0 -48px}#cur span{opacity:0;transition:.3s}#cur.b span{opacity:1}
+@media(hover:none),(pointer:coarse){#cur{display:none}}
+@media(hover:hover) and (pointer:fine){body,a,button{cursor:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.ln>span,.fade{transform:none!important;opacity:1!important}.pv::after{display:none}}
+</style>
+</head>
+<body>
+<div id="ld" aria-hidden="true"><span class="lab">Blackowl &amp; Co.</span><div><div id="bar"></div><b id="pc">0</b></div></div>
+<div id="cur" aria-hidden="true"><span></span></div>
+
+<nav id="nav" aria-label="Primary">
+<a class="logo" href="#top" data-c="">BLACKOWL &amp; CO.</a>
+<ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#packages">Packages</a></li><li><a href="#contact">Contact</a></li></ul>
+<div class="nr"><a class="talk mag" href="#contact">Let's Talk</a><button class="mb" id="mb" aria-expanded="false" aria-controls="menu">MENU</button></div>
+</nav>
+<div id="menu" role="dialog" aria-label="Menu">
+<a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#packages">Packages</a><a href="#contact">Contact</a>
+</div>
+
+<main id="top">
+<header id="hero">
+<svg id="owl" viewBox="0 0 600 600" aria-hidden="true">
+<g id="og"><path d="M70 120 L300 40 L530 120 L530 400 Q300 600 70 400Z" fill="none" stroke="#2a2a30" stroke-width="2"/>
+<path d="M70 120 L190 210 M530 120 L410 210" stroke="#635BFF" stroke-width="2"/>
+<circle cx="200" cy="270" r="95" fill="#fff"/><circle cx="400" cy="270" r="95" fill="#fff"/>
+<circle id="e1" cx="200" cy="270" r="42" fill="#0A0A0A"/><circle id="e2" cx="400" cy="270" r="42" fill="#0A0A0A"/>
+<circle id="d1" cx="200" cy="270" r="12" fill="#635BFF"/><circle id="d2" cx="400" cy="270" r="12" fill="#635BFF"/>
+<path d="M300 360 L270 430 L330 430Z" fill="#635BFF"/></g></svg>
+<div class="wrap">
+<h1 class="h" id="h1"><span class="ln"><span>We make</span></span><span class="ln"><span>brands</span></span><span class="ln"><span>impossible</span></span><span class="ln"><span>to ignore.</span></span></h1>
+<div class="hb"><p>Blackowl &amp; Co. is a creative studio building brands, digital experiences and visual stories through design, motion and technology.</p>
+<div class="btns"><a class="btn f mag" href="#work" data-c="VIEW">View our work</a><a class="btn mag" href="#contact" data-c="OPEN">Let's work together</a></div></div>
+</div>
+</header>
+
+<section id="intro"><div class="wrap">
+<h2 class="h" data-split><span class="ln"><span>We design</span></span><span class="ln"><span><em class="a" style="font-style:normal">identities.</em></span></span><span class="ln"><span>Create <em class="a" style="font-style:normal">motion.</em></span></span><span class="ln"><span>Build digital</span></span><span class="ln"><span><em class="a" style="font-style:normal">experiences.</em></span></span></h2>
+<p class="fade">We work with ambitious businesses and brands to create visual identities and digital experiences that are clear, memorable and built to move.</p>
+</div></section>
+
+<section id="services" class="light"><div class="wrap">
+<h2 class="h" style="margin-bottom:70px"><span class="ln"><span>What we do</span></span></h2>
+<div id="sl"></div></div></section>
+
+<section id="work"><div class="wrap">
+<h2 class="h" style="margin-bottom:90px"><span class="ln"><span>Selected work</span></span></h2>
+<div class="wk" id="wk"></div></div></section>
+
+<section id="why" class="dark"><div class="wrap">
+<h2 class="h"><span class="ln"><span>Why Blackowl?</span></span></h2>
+<div class="wy" style="margin-top:60px"><p class="fade">We don't just make things look good.</p><p class="fade">We build visual systems that help businesses communicate, connect and stand out.</p></div>
+<div>
+<div class="wr fade"><i class="lab">01</i><span>Think different</span></div><div class="wr fade"><i class="lab">02</i><span>Design with purpose</span></div><div class="wr fade"><i class="lab">03</i><span>Move with culture</span></div><div class="wr fade"><i class="lab">04</i><span>Build for digital</span></div></div>
+</div></section>
+
+<section id="about"><div class="wrap ab">
+<div><h2 class="h" style="font-size:clamp(40px,8vw,130px)"><span class="ln"><span>We are</span></span><span class="ln"><span>Blackowl.</span></span></h2>
+<p class="fade" style="margin-top:40px">Blackowl &amp; Co. is an independent creative studio focused on design, motion and digital experiences.</p>
+<p class="fade">We combine strategy, visual design and technology to help brands communicate with clarity and character.</p>
+<div class="tg"><span>Creative Direction</span><span>Graphic Design</span><span>Motion</span><span>UI/UX</span><span>Web</span></div></div>
+<div class="av" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</div></section>
+
+<section id="packages" class="light"><div class="wrap">
+<h2 class="h"><span class="ln"><span>Graphic design</span></span><span class="ln"><span>packages</span></span></h2>
+<div class="pk">
+<article class="pc"><h3>PLUS</h3><ul><li><b>10</b>Regular Social Media Designs</li><li><b>2</b>Promotional Designs</li><li><b>2</b>Festival / Special Posts</li><li><b>4</b>Story Designs</li></ul><p>Let's discuss your requirements</p></article>
+<article class="pc hi"><span class="lab tag">Most chosen format</span><h3>PRO</h3><ul><li><b>16</b>Regular Social Media Designs</li><li><b>4</b>Promotional Designs</li><li><b>4</b>Festival / Special Posts</li><li><b>8</b>Story Designs</li></ul><p>Let's discuss your requirements</p></article>
+<article class="pc"><h3>PREMIUM</h3><ul><li><b>24</b>Regular Social Media Designs</li><li><b>6</b>Promotional Designs</li><li><b>6</b>Festival / Special Posts</li><li><b>12</b>Story Designs</li></ul><p>Let's discuss your requirements</p></article>
+</div>
+<div class="cu"><h3>Need something custom?</h3><p>Let's build a package around your brand.</p><a class="btn f mag" href="#contact" data-c="OPEN">Get a custom quote</a></div>
+</div></section>
+
+<section id="trust"><div class="wrap"><span class="lab">Trusted by</span>
+<div class="lg fade"><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div></div></div></section>
+
+<section id="proc" class="dark"><div class="pin">
+<div class="wrap"><h2 class="h" style="font-size:clamp(40px,8vw,120px)">How we work</h2></div>
+<div class="trk" id="trk"></div><div class="pb"><i id="pbi"></i></div></div></section>
+
+<section id="contact"><div class="wrap">
+<h2 class="h"><span class="ln"><span>Let's make</span></span><span class="ln"><span>something</span></span><span class="ln"><span style="color:#635BFF">memorable.</span></span></h2>
+<form id="fm" novalidate>
+<div class="fl"><label for="n">Name</label><input id="n" required autocomplete="name"></div>
+<div class="fl"><label for="co">Company</label><input id="co" autocomplete="organization"></div>
+<div class="fl"><label for="em">Email</label><input id="em" type="email" required autocomplete="email"></div>
+<div class="fl"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel"></div>
+<div class="fl"><label for="nd">What do you need?</label><select id="nd"><option>Graphic Design</option><option>Branding</option><option>Motion Graphics</option><option>UI/UX</option><option>Website</option><option>Digital Creative</option><option>Other</option></select></div>
+<div class="fl"><label for="bd">Budget</label><input id="bd"></div>
+<div class="fl w"><label for="ms">Message</label><textarea id="ms" rows="3"></textarea></div>
+<div><button class="btn f mag" type="submit">Start a project →</button></div><div id="ok" role="status"></div>
+</form>
+<div class="ci"><a href="mailto:hello@yourdomain.com">hello@[yourdomain]</a><span>+977 [phone]</span><span>Nepal</span><a href="#">Instagram</a><a href="#">Behance</a><a href="#">LinkedIn</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="big">BLACKOWL &amp; CO.</div>
+<div class="fr"><div><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="13" cy="20" r="9" fill="#fff"/><circle cx="31" cy="20" r="9" fill="#fff"/><circle id="f1" cx="13" cy="20" r="4" fill="#635BFF"/><circle id="f2" cx="31" cy="20" r="4" fill="#635BFF"/></svg><p style="margin-top:10px">Design. Motion. Digital.</p></div>
+<div class="fk"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#packages">Packages</a><a href="#contact">Contact</a></div>
+<div class="fk"><a href="#">Instagram</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="mailto:hello@yourdomain.com">Email</a></div></div>
+<p class="fk" style="margin-top:40px">© 2026 Blackowl &amp; Co.</p></div></footer>
+
+<div id="cs" role="dialog" aria-modal="true" aria-label="Case study"><div class="top"><span class="lab">Case study</span><button class="lab" id="cl">Close ✕</button></div><div class="wrap" id="cb"></div></div>
+
+<script>
+/* ===== EDIT HERE: add projects by adding an object to this array ===== */
+const PROJECTS=[
+{id:"global-gateway",title:"Global Gateway",client:"Travel & Tourism",category:"Branding / Graphic Design",year:"2026",cls:"c0",mark:"GG",services:["Branding","Graphic Design"],
+ description:"Placeholder — replace with the real project summary.",challenge:"Placeholder — describe the client's problem.",approach:"Placeholder — describe your process.",direction:"Placeholder — describe the creative direction.",cover:"",gallery:[],video:"",results:""},
+{id:"anon-cafe",title:"Anon Cafe",client:"Hospitality",category:"Branding / Social Media",year:"2026",cls:"c1",mark:"AC",services:["Branding","Social Media"],
+ description:"Placeholder — replace with the real project summary.",challenge:"Placeholder.",approach:"Placeholder.",direction:"Placeholder.",cover:"",gallery:[],video:"",results:""},
+{id:"blackowl",title:"Blackowl",client:"Creative Studio",category:"Brand Identity / Digital",year:"2026",cls:"c2",mark:"BO",services:["Brand Identity","Digital"],
+ description:"Our own identity and website.",challenge:"Placeholder.",approach:"Placeholder.",direction:"Placeholder.",cover:"",gallery:[],video:"",results:""},
+{id:"project-four",title:"[Project Name]",client:"UI/UX",category:"Digital Experience",year:"2026",cls:"c3",mark:"04",services:["UI/UX","Web"],
+ description:"Placeholder — replace with the real project summary.",challenge:"Placeholder.",approach:"Placeholder.",direction:"Placeholder.",cover:"",gallery:[],video:"",results:""}
+];
+const SERVICES=[["Graphic Design",["Social media content","Campaign creatives","Advertising","Marketing materials","Festival & promotional designs"]],["Motion Graphics",["Social media reels","Animated advertisements","Logo animation","Promotional videos","Motion branding"]],["Branding",["Visual identity","Logo design","Brand guidelines","Typography","Color systems"]],["UI / UX Design",["Website design","Mobile app design","User experience","Design systems","Prototypes"]],["Web Design",["Landing pages","Business websites","Corporate websites","Responsive design","Interactive websites"]],["Digital Creative",["Campaign concepts","Creative direction","Content systems","Digital advertisements"]]];
+const STEPS=[["Discover","We understand your brand, audience and goals."],["Define","We establish the creative direction."],["Design","We create and refine the visual system."],["Deliver","We prepare everything for real-world use."],["Grow","We continue supporting your brand."]];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* build */
+$('#sl').innerHTML=SERVICES.map((s,i)=>`<div class="sv"><button aria-expanded="false" data-c="EXPLORE"><i>0${i+1}</i><span>${s[0]}</span></button><div class="x"><div><ul>${s[1].map(t=>`<li>${t}</li>`).join('')}</ul></div></div></div>`).join('');
+$$('.sv>button').forEach(b=>b.onclick=()=>{const p=b.parentNode,o=p.classList.toggle('o');b.setAttribute('aria-expanded',o)});
+$('#wk').innerHTML=PROJECTS.map((p,i)=>`<a class="pj" href="#/work/${p.id}" data-c="VIEW PROJECT →" data-big><div class="pv"><div class="${p.cls}">${p.cover?`<img src="${p.cover}" alt="${p.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`:p.mark}</div></div><div class="pm"><div><h3><span class="lab" style="margin-right:12px">0${i+1}</span>${p.title}</h3><small>${p.client} — ${p.category}</small></div><span class="lab">${p.year}</span></div></a>`).join('');
+$('#trk').innerHTML=STEPS.map((s,i)=>`<div class="st"><b>0${i+1}</b><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+
+/* loader */
+let n=0;const ld=$('#ld');
+const tick=()=>{n=Math.min(100,n+(RM?25:Math.random()*7+2));$('#pc').textContent=Math.floor(n);$('#bar').style.width=n+'%';
+ if(n<100)setTimeout(tick,50);else setTimeout(()=>{ld.classList.add('out');$('#h1').classList.add('in');setTimeout(()=>ld.remove(),1100)},250)};tick();
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('h2.h,.fade,.pj,[data-split]').forEach((e,i)=>{e.style.transitionDelay='';io.observe(e)});
+$$('.ln').forEach((l,i)=>{const s=l.firstElementChild;s.style.transitionDelay=(i%5)*.08+'s'});
+$$('h2.h .ln').forEach(l=>io.observe(l));
+$$('.wr').forEach((e,i)=>e.style.transitionDelay=i*.1+'s');
+
+/* nav */
+const nav=$('#nav'),mb=$('#mb'),mn=$('#menu');let ly=0;
+addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('sm',y>60);nav.classList.toggle('hide',y>ly&&y>400&&!mn.classList.contains('on'));ly=y;
+ const pr=$('#proc'),r=pr.getBoundingClientRect(),t=Math.max(0,Math.min(1,-r.top/(r.height-innerHeight))),tk=$('#trk');
+ tk.style.transform=`translateX(${-t*(tk.scrollWidth-innerWidth+40)}px)`;$('#pbi').style.width=t*100+'%';
+ $$('.st').forEach((s,i)=>s.classList.toggle('on',t>=i/STEPS.length-.02&&t<(i+1)/STEPS.length+.02))},{passive:true});
+const tm=o=>{mn.classList.toggle('on',o);mb.textContent=o?'CLOSE':'MENU';mb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+mb.onclick=()=>tm(!mn.classList.contains('on'));$$('#menu a').forEach(a=>a.onclick=()=>tm(false));
+addEventListener('keydown',e=>{if(e.key==='Escape'){tm(false);closeCs()}});
+
+/* owl + cursor + magnetic */
+const cur=$('#cur'),cs=$('span',cur);let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;
+ const h=e.target.closest('[data-c],a,button');
+ if(h){const t=h.dataset.c;cur.classList.add('b');cs.textContent=t||'';if(!t&&!h.dataset.big)cur.classList.remove('b')}else cur.classList.remove('b')});
+const lerp=()=>{cx+=(mx-cx)*.2;cy+=(my-cy)*.2;cur.style.transform=`translate(${cx}px,${cy}px)`;
+ if(!RM){const nx=(mx/innerWidth-.5)*2,ny=(my/innerHeight-.5)*2;
+  [['d1','e1'],['d2','e2']].forEach(([d,e])=>{$('#'+d).setAttribute('transform',`translate(${nx*30},${ny*30})`);$('#'+e).setAttribute('transform',`translate(${nx*20},${ny*20})`)});
+  $('#og').style.transform=`translate(${nx*-14}px,${ny*-10}px)`;
+  ['f1','f2'].forEach(i=>$('#'+i).setAttribute('transform',`translate(${nx*3},${ny*3})`))}
+ requestAnimationFrame(lerp)};lerp();
+$$('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{if(RM)return;const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});b.addEventListener('pointerleave',()=>b.style.transform='');b.style.transition='transform .4s,background .4s,color .4s,border-color .4s'});
+/* project parallax on hover */
+$$('.pj').forEach(p=>{const v=$('.pv>div',p);p.addEventListener('pointermove',e=>{if(RM)return;const r=p.getBoundingClientRect();v.style.translate=`${((e.clientX-r.left)/r.width-.5)*-24}px ${((e.clientY-r.top)/r.height-.5)*-24}px`});p.addEventListener('pointerleave',()=>v.style.translate='')});
+
+/* case study */
+const csE=$('#cs'),cb=$('#cb');
+function openCs(id){const p=PROJECTS.find(x=>x.id===id);if(!p)return;
+ const rel=PROJECTS.filter(x=>x!==p).map(x=>`<a class="btn" href="#/work/${x.id}">${x.title}</a>`).join('');
+ const blk=(t,v)=>v?`<div class="cb"><span class="lab">${t}</span><p>${v}</p></div>`:'';
+ cb.innerHTML=`<h2 class="h" style="margin-top:50px;font-size:clamp(44px,9vw,150px)">${p.title}</h2>
+ <div class="cv ${p.cls}">${p.cover?`<img src="${p.cover}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover">`:p.mark}</div>
+ <div class="mt"><div><small>Client</small>${p.client}</div><div><small>Year</small>${p.year}</div><div><small>Services</small>${p.services.join(', ')}</div></div>
+ ${blk('Overview',p.description)}${blk('Challenge',p.challenge)}${blk('Approach',p.approach)}${blk('Creative direction',p.direction)}
+ <div class="cb"><span class="lab">Final work</span><div style="width:100%"><div class="gal">${(p.gallery.length?p.gallery.map(g=>`<div><img src="${g}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>`):['Final work image','Gallery image','Gallery image']).map(x=>typeof x==='string'&&x[0]!=='<'?`<div>${x}</div>`:x).join('')}</div>
+ ${p.video?`<video src="${p.video}" controls preload="none" style="width:100%"></video>`:'<div class="gal"><div style="grid-column:1/-1">Motion / video section</div></div>'}</div></div>
+ ${blk('Results',p.results)}
+ <div class="cb"><span class="lab">Related projects</span><div class="rel">${rel}</div></div>`;
+ csE.classList.add('on');csE.scrollTop=0;document.body.style.overflow='hidden';$('#cl').focus()}
+function closeCs(){if(!csE.classList.contains('on'))return;csE.classList.remove('on');document.body.style.overflow='';if(location.hash.startsWith('#/work'))history.pushState('',document.title,'#work')}
+$('#cl').onclick=closeCs;
+const route=()=>{const m=location.hash.match(/^#\/work\/(.+)/);m?openCs(m[1]):csE.classList.remove('on')&&0;if(!m){csE.classList.remove('on');document.body.style.overflow=''}};
+addEventListener('hashchange',route);route();
+
+/* form */
+$('#fm').addEventListener('submit',e=>{e.preventDefault();const n=$('#n'),m=$('#em');let bad=false;
+ [n,m].forEach(f=>{const x=!f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value));f.classList.toggle('err',x);bad=bad||x});
+ $('#ok').textContent=bad?'Add your name and a valid email to continue.':'Thanks — we have your brief and will reply by email.';
+ if(!bad){/* TODO: connect to your form backend (Formspree, Resend, etc.) */e.target.reset()}});
+</script>
+</body>
+</html>
